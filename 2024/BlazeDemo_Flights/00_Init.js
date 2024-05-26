@@ -1,7 +1,8 @@
 //setup
 export function initFunction(){
 
-	console.log("------------------------Starting the test");
+	console.log(`------------------------Start of Test [${new Date().toISOString()}]`);
+
     // Data to be used in the payloads
 	const P_AirLine=[
 	    ['Paris','Buenos Aires'],
