@@ -1,0 +1,5 @@
+k6 run --summary-trend-stats="med,avg,p(95)" 01_Action.js  ##Running test with customized  trend metrics
+k6 run --no-setup --no-teardown 01_Action.js               ##Running test without setup and teardown functions
+k6 run __K6.variable=prod 01_Action.js                     ##Running test with environment varibles in command line
+k6 run --out json=results.json 01_Action.js                ##Running test and exporting results to a json file(csv, xml, html).
+k6 run --iterations=10 vus=5 01_Action.js                  ##Running test with predefined iterations and users(duration insted of iterations)
