@@ -26,7 +26,7 @@ return {
 			gracefulStop: '15s',
 
 			vus: 1,
-			iterations: 1,
+			iterations: 2,
 			maxDuration: '10s'
 		}
 	}

@@ -1,4 +1,4 @@
-//init
+//init Context
 import { option } from "./Runtime_Settings.js"
 import { initFunction } from "./00_Init.js"
 import { endFunction } from "./02_End.js"
@@ -7,7 +7,7 @@ import { Reserve_Flights_01 } from "./Transactions/01_Reserve_Flights.js"
 import { Purchase_Flights_02 } from "./Transactions/02_Purchase_Flights.js"
 import { Confirm_Information_03 } from "./Transactions/03_Confirm_Information.js"
 
-//Options of the test
+//Options of the test -- part of the Init context
 export const options=option();
 
 //run once and at the beginning
