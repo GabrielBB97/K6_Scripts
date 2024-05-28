@@ -20,14 +20,14 @@ return {
 
 		BlazeDemo_Flights: {
 
-			executor: 'shared-iterations',
+			executor: 'constant-vus',
 
 			startTime: '0s',
 			gracefulStop: '15s',
 
 			vus: 1,
-			iterations: 2,
-			maxDuration: '10s'
+			//iterations: 2,
+			duration: '1m'
 		}
 	}
 
