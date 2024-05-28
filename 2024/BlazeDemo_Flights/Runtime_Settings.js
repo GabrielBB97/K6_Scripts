@@ -9,10 +9,10 @@ return {
 
 		http_reqs: ['count >= 1'],
 		http_req_failed: ['rate < 0.1'],
-		Request_2_Avarage_Duration: ['avg < 600'],
-		Request_3_Avarage_Duration: ['avg < 700'],
-		Request_4_Avarage_Duration: ['avg < 800']
-		//http_req_duration: ['avg < 250']
+		HomePage_Avarage_Duration: ['avg < 600'],
+		Reserve_Flights_Avarage_Duration: ['avg < 600'],
+		Purchase_Flights_Avarage_Duration: ['avg < 600'],
+		Confirm_Info_Avarage_Duration: ['avg < 600']
 	},
 
 	//Defining scenario configuration to run
@@ -25,12 +25,14 @@ return {
 			startTime: '0s',
 			gracefulStop: '15s',
 
-			vus: 1,
+			vus: 10,
 			//iterations: 2,
-			duration: '1m'
+			duration: '15m'
 		}
+	},
+	tags: {
+		Test: `Flights_SmokeTest_${new Date().toISOString()}`
 	}
-
 };
 
 }

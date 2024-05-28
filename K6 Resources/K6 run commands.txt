@@ -5,7 +5,7 @@ k6 run --out json=results.json 01_Action.js                ##Running test and ex
 k6 run --iterations=10 vus=5 01_Action.js                  ##Running test with predefined iterations and users(duration insted of iterations)
 k6 run --no-summary 01_Action.js                           ##Running test without outputing the summary overview at the end of test.
 k6 run -e K6_WEB_DASHBOARD=true ./01_Action.js             ##Running test and sending metrics to a real-time dashboard
-k6 run -e K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=Flights_report_20240528.html ./01_Action.js
+k6 run -e K6_WEB_DASHBOARD=true -e K6_WEB_DASHBOARD_EXPORT=Flights_report_20240528.html ./01_Action.js
 
 Other options:
 --summary-time-unit      ##Running the test with a fixed time-unit for all time values in the summary.

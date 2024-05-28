@@ -2,11 +2,10 @@ import http from "k6/http";
 import { check, group } from "k6";
 import { Trend } from "k6/metrics";
 
-const ReqDuration_4 = new Trend("Request_4_Avarage_Duration");
+const ReqDuration_4 = new Trend("Confirm_Info_Avarage_Duration");
 
 //Fourth Request
 export function Confirm_Information_03(datos){
-	group("BlazeDemo_03_Confirm_Information", function(){
 
 	    const req_4=http.post("https://blazedemo.com/confirmation.php",
 		{
@@ -32,5 +31,4 @@ export function Confirm_Information_03(datos){
 	    if(pass)
 	    	ReqDuration_4.add(req_4.timings.duration);
 
-	});
 }

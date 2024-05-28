@@ -2,11 +2,10 @@ import http from "k6/http";
 import { check, group } from "k6";
 import { Trend } from "k6/metrics";
 
-const ReqDuration_3 = new Trend("Request_3_Avarage_Duration");
+const ReqDuration_3 = new Trend("Purchase_Flights_Avarage_Duration");
 
 //Third Request
 export function Purchase_Flights_02(datos, Random_1, Random_2, Random_3){
-    group("BlazeDemo_02_Purchase_Flights",function(){
 
 	    const req_3=http.post("https://blazedemo.com/purchase.php",
 		{
@@ -27,5 +26,4 @@ export function Purchase_Flights_02(datos, Random_1, Random_2, Random_3){
 	    if(pass)
 	    	ReqDuration_3.add(req_3.timings.duration);
 
-	});
 }
