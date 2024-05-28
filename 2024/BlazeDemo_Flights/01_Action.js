@@ -24,7 +24,7 @@ export default function(datos){
     HomePage_00();
     Reserve_Flights_01(datos, Random_1, Random_2);
     Purchase_Flights_02(datos, Random_1, Random_2, Random_3);
-    Confirm_Information_03(datos);  
+    Confirm_Information_03(datos);
 }
 //run once and at the end
 export function teardown(){
