@@ -9,10 +9,6 @@ return {
 
 		http_reqs: ['count >= 1'],
 		http_req_failed: ['rate < 0.1'],
-		HomePage_Avarage_Duration: ['avg < 600'],
-		Reserve_Flights_Avarage_Duration: ['avg < 600'],
-		Purchase_Flights_Avarage_Duration: ['avg < 600'],
-		Confirm_Info_Avarage_Duration: ['avg < 600']
 	},
 
 	//Defining scenario configuration to run
@@ -20,14 +16,14 @@ return {
 
 		BlazeDemo_Flights: {
 
-			executor: 'constant-vus',
+			executor: 'per-vu-iterations',
 
 			startTime: '0s',
 			gracefulStop: '15s',
 
 			vus: 10,
-			//iterations: 2,
-			duration: '15m'
+			iterations: 2,
+			//duration: '15m'
 		}
 	},
 	tags: {

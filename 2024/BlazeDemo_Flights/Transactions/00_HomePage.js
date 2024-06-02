@@ -1,8 +1,9 @@
 import http from "k6/http";
 import { check, group } from "k6";
-import { Trend } from "k6/metrics"
+import { Trend, Counter } from "k6/metrics"
 
-const ReqDuration_1 = new Trend("HomePage_Avarage_Duration");
+const ReqDuration_1 = new Trend("HomePage_Duration");
+const ReqCounter_1 = new Counter("HomePage_Passed");
 
 //First Request
 export function HomePage_00(){
@@ -13,6 +14,8 @@ export function HomePage_00(){
 		'Is Request 1 Status 200' : (r) => r.status == 200,
 	});
 
-	if(pass)
+	if(pass){
 		ReqDuration_1.add(req_1.timings.duration);
+	    ReqCounter_1.add(1);
+	}
 }

@@ -1,9 +1,10 @@
 import http from "k6/http";
 import { check, group } from "k6";
-import { Trend } from "k6/metrics";
+import { Trend, Counter } from "k6/metrics";
 
 //Global variables
-const ReqDuration_2 = new Trend("Reserve_Flights_Avarage_Duration");
+const ReqDuration_2 = new Trend("Reserve_Flights_Duration");
+const ReqCounter_2 = new Counter("Reserve_Flights_Passed");
 
 //Second Request
 export function Reserve_Flights_01(datos, Random_1, Random_2){
@@ -21,7 +22,8 @@ export function Reserve_Flights_01(datos, Random_1, Random_2){
 	    'Is Request 2 Status 200' : (r) => r.status == 200,
     });
 
-    if(pass)
+    if(pass){
     	ReqDuration_2.add(req_2.timings.duration);
-	
+		ReqCounter_2.add(1);
+	}
 }

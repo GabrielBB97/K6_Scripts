@@ -1,8 +1,9 @@
 import http from "k6/http";
 import { check, group } from "k6";
-import { Trend } from "k6/metrics";
+import { Trend, Counter } from "k6/metrics";
 
-const ReqDuration_3 = new Trend("Purchase_Flights_Avarage_Duration");
+const ReqDuration_3 = new Trend("Purchase_Flights_Duration");
+const ReqCounter_3 = new Counter("Purchase_Flights_Passed");
 
 //Third Request
 export function Purchase_Flights_02(datos, Random_1, Random_2, Random_3){
@@ -23,7 +24,8 @@ export function Purchase_Flights_02(datos, Random_1, Random_2, Random_3){
 		    'Is Request 3 Status 200' : (r) => r.status == 200,
 	    });
 
-	    if(pass)
+	    if(pass){
 	    	ReqDuration_3.add(req_3.timings.duration);
-
+			ReqCounter_3.add(1);
+		}
 }
