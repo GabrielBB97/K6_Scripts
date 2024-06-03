@@ -16,14 +16,15 @@ return {
 
 		BlazeDemo_Flights: {
 
-			executor: 'per-vu-iterations',
+			executor: 'constant-arrival-rate',
 
-			startTime: '0s',
-			gracefulStop: '15s',
+			duration: '30s',
+			rate: 10,
+			timeUnit: '1s',
+			preAllocatedVUs: 7,
+			maxVUs: 10
+			
 
-			vus: 10,
-			iterations: 2,
-			//duration: '15m'
 		}
 	},
 	tags: {
